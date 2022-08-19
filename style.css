@@ -1,0 +1,114 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: hsl(210, 46%, 95%);
+    --white-background: hsl(0, 0%, 100%);
+    --dark-background: hsl(217, 19%, 35%);
+    --darker-background: hsl(219, 29%, 14%);
+    --purple-background: hsl(263, 55%, 52%);
+    --font-color: hsl(210, 46%, 95%);
+}
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+    width: 100%;
+    height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    color: var(--font-color);
+   
+}
+
+.parent {
+    margin: 12px ;
+}
+
+.parent div {
+    margin-bottom: 10px;
+}
+    
+.div1 { 
+    grid-area: 1 / 1 / 2 / 3; 
+    background-color: var(--purple-background);
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+.div2 { 
+    grid-area: 1 / 3 / 2 / 4; 
+    background-color: var(--dark-background);
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+.div3 { 
+    grid-area: 2 / 2 / 3 / 4;
+    background-color: var(--darker-background);
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+
+.div4 { 
+    grid-area: 2 / 1 / 3 / 2;
+    background-color: var(--white-background);
+    color: var(--dark-background); 
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+.div5 { 
+    grid-area: 1 / 4 / 3 / 5;
+    background-color: var(--white-background);
+    color: var(--dark-background);
+    padding: 20px 30px;
+    border-radius: 5px;
+}
+
+.heading {
+    margin-bottom: 10px;
+}
+
+.heading h3 {
+    font-weight: 600;
+}
+
+.heading p {
+    opacity: 50%;
+}
+
+.bold {
+    color: var(--white-background);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.div4 .bold, .div5 .bold {
+    color: inherit;
+}
+
+.quote {
+    opacity: 70%;
+}
+
+
+@media only screen and (min-width: 1024px) {
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .parent {
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 12px;
+        grid-row-gap: 12px;
+    }
+}
